@@ -52,7 +52,8 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>~/source/scripts/shell/ipfsBackup.sh</string>
+						<string>~/source/scripts/shell</string>
+						<string>~/source/scripts/shell/test.sh</string>
 					</array>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -534,14 +535,14 @@ done
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>420.000000:935.000000</string>
+				<string>420.000000:1083.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Display Notification.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -584,7 +585,17 @@ done
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true	var choice = app.chooseFromList(input, {withPrompt: 'Added to IPFS. Select to copy hash.'})	if (choice.length &gt; 0) {		return choice[0].split(' ')[0];	} else {		return choice	}}</string>
+					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true
+	//var x = [1,2,3,4].map( function(item) { return item * 10; } );
+	var outArr=[]
+	var inputLength = input.length
+	
+	for (var i = 0 ; i &lt; inputLength ; i++) {
+		var wtf = input[i].split('added')
+		outArr = outArr.concat(wtf)		
+	}
+	var choice = app.chooseFromList(outArr, {withPrompt: 'Added to IPFS. Select to copy hash.'})	//	var choice = app.chooseFromList(input, {withPrompt: 'Added to IPFS. Select to copy hash.'})
+		app.displayAlert(choice)	if (choice.length &gt; 0) {		return choice[0].split(' ')[0];	} else {		return choice	}}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -637,14 +648,14 @@ done
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>420.000000:977.000000</string>
+				<string>420.000000:1509.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -741,7 +752,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>420.000000:1019.000000</string>
+				<string>420.000000:1551.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>

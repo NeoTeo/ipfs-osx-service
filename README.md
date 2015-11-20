@@ -5,6 +5,7 @@ A simple (no, really) service to add files and directories to IPFS using the Fin
 ## Requirements
 
 Due to a quirk in Automator only the most basic environment variables are imported so you need to make sure the ipfs executable's path is correct:
+
 Double click the script and choose `Open with Automator` and, if necessary, edit the GOPATH (to match your own) in the top script.  Save and close.
 
 ## Install

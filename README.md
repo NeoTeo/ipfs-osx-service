@@ -11,6 +11,8 @@ Double click the script and choose `Open with Automator` and, if necessary, edit
 
 Double click script and choose `Install`.
 
+## Usage
+
 From there you simply select the files you want to add to IPFS from Finder and select  `AddToIPFS`.
 If you want to copy a hash to the clipboard, select the hash and choose ok.
 

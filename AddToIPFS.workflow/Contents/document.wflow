@@ -21,111 +21,6 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.1.2</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>fileNames</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Get Specified Finder Items.action</string>
-				<key>ActionName</key>
-				<string>Get Specified Finder Items</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>fileNames</key>
-					<array>
-						<string>~/source/scripts/shell</string>
-						<string>~/source/scripts/shell/test.sh</string>
-					</array>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.SpecifiedFiles</string>
-				<key>CFBundleVersion</key>
-				<string>1.1.2</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryFilesAndFolders</string>
-				</array>
-				<key>Class Name</key>
-				<string>SpecifiedFilesAction</string>
-				<key>InputUUID</key>
-				<string>C6A4B80D-F45F-4EA8-88F5-1E4607856FA9</string>
-				<key>Keywords</key>
-				<array>
-					<string>File</string>
-					<string>Choose</string>
-					<string>Find</string>
-					<string>Get</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>C4196552-F6A1-4F39-958C-2C6F03735504</string>
-				<key>UUID</key>
-				<string>1B64AAD9-29F7-4849-8867-4477EEB73ABA</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<array/>
-						<key>name</key>
-						<string>fileNames</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
-				<key>isViewVisible</key>
-				<true/>
-				<key>location</key>
-				<string>420.000000:488.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array>
 						<string>com.apple.cocoa.string</string>
 					</array>
 				</dict>
@@ -288,7 +183,7 @@ done
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>420.000000:851.000000</string>
+				<string>420.000000:253.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -398,7 +293,7 @@ done
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>420.000000:893.000000</string>
+				<string>420.000000:295.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -537,7 +432,7 @@ done
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>420.000000:1083.000000</string>
+				<string>420.000000:485.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Display Notification.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -585,17 +480,8 @@ done
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true
-	//var x = [1,2,3,4].map( function(item) { return item * 10; } );
-	var outArr=[]
-	var inputLength = input.length
-	
-	for (var i = 0 ; i &lt; inputLength ; i++) {
-		var wtf = input[i].split('added')
-		outArr = outArr.concat(wtf)		
-	}
-	var choice = app.chooseFromList(outArr, {withPrompt: 'Added to IPFS. Select to copy hash.'})	//	var choice = app.chooseFromList(input, {withPrompt: 'Added to IPFS. Select to copy hash.'})
-		app.displayAlert(choice)	if (choice.length &gt; 0) {		return choice[0].split(' ')[0];	} else {		return choice	}}</string>
+					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true	//var x = [1,2,3,4].map( function(item) { return item * 10; } );	var outArr=[]	var inputLength = input.length		for (var i = 0 ; i &lt; inputLength ; i++) {		var wtf = input[i].split('added ')		outArr = outArr.concat(wtf)			}
+		var choice = app.chooseFromList(outArr, {withPrompt: 'Added to IPFS. Select to copy hash.'})		if (choice.length &gt; 0) {		return choice[0].split(' ')[0];	} else {		return choice	}}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -650,7 +536,7 @@ done
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>420.000000:1509.000000</string>
+				<string>420.000000:731.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -752,7 +638,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>420.000000:1551.000000</string>
+				<string>420.000000:773.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -762,40 +648,33 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>18F576B0-95B0-4636-B40B-71467B9A4833</key>
+		<key>36313F33-3234-427B-B2D0-8161BEDDB872</key>
 		<dict>
 			<key>from</key>
 			<string>EE5019F0-5912-437E-B8C2-B89FD3E07206 - EE5019F0-5912-437E-B8C2-B89FD3E07206</string>
 			<key>to</key>
 			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
 		</dict>
-		<key>3164D80E-31F4-4638-965E-C41948E0CA81</key>
+		<key>3787E9CB-2B2E-4949-8DA5-218826D782DF</key>
+		<dict>
+			<key>from</key>
+			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
+			<key>to</key>
+			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
+		</dict>
+		<key>5EAABB89-AC4E-4CE2-B456-89066EBD5BB8</key>
+		<dict>
+			<key>from</key>
+			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
+			<key>to</key>
+			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
+		</dict>
+		<key>A604C7C8-630B-4A73-AE87-D26598B43374</key>
 		<dict>
 			<key>from</key>
 			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
 			<key>to</key>
 			<string>EA4DD364-4B54-4F04-8270-565BA90A2660 - EA4DD364-4B54-4F04-8270-565BA90A2660</string>
-		</dict>
-		<key>5400549C-2876-4D9A-B73A-44ADA41DECFA</key>
-		<dict>
-			<key>from</key>
-			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
-			<key>to</key>
-			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
-		</dict>
-		<key>8BB85C80-FE5F-4C34-8741-E59A51580BAA</key>
-		<dict>
-			<key>from</key>
-			<string>1B64AAD9-29F7-4849-8867-4477EEB73ABA - 1B64AAD9-29F7-4849-8867-4477EEB73ABA</string>
-			<key>to</key>
-			<string>EE5019F0-5912-437E-B8C2-B89FD3E07206 - EE5019F0-5912-437E-B8C2-B89FD3E07206</string>
-		</dict>
-		<key>F35D9AC7-961A-4504-AFAD-7875AC31883F</key>
-		<dict>
-			<key>from</key>
-			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
-			<key>to</key>
-			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
 		</dict>
 	</dict>
 	<key>variables</key>

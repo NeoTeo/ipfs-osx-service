@@ -14,8 +14,10 @@ Double click script and choose `Install`.
 
 ## Usage
 
-From there select the files you want to add to IPFS from Finder and select  `AddToIPFS`.
+From Finder select the files you want to add to IPFS, right click and select `AddToIPFS`. 
+A dialog will show a list of the added files' hashes and names.
 If you want to copy any of the hashes (and only the hash) to the clipboard, select them and choose ok.
+For multiple selection the system defaults apply: Shift, command or dragging the selection.
 
 ![](ShowOSXIPFS.gif?raw=true "IPFS OSX Service in action.")
 ## Todo

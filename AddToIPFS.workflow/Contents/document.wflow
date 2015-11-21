@@ -480,8 +480,18 @@ done
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true	//var x = [1,2,3,4].map( function(item) { return item * 10; } );	var outArr=[]	var inputLength = input.length		for (var i = 0 ; i &lt; inputLength ; i++) {		var wtf = input[i].split('added ')		outArr = outArr.concat(wtf)			}
-		var choice = app.chooseFromList(outArr, {withPrompt: 'Added to IPFS. Select to copy hash.'})		if (choice.length &gt; 0) {		return choice[0].split(' ')[0];	} else {		return choice	}}</string>
+					<string>function run(input, parameters) {		app = Application.currentApplication()	app.includeStandardAdditions = true
+		var outArr=[]	var inputLength = input.length		for (var i = 0 ; i &lt; inputLength ; i++) {		outArr = outArr.concat(input[i].split('added '))			}		var choices = app.chooseFromList(outArr, 
+		{ withPrompt: 'Added to IPFS. Select to copy hash.',
+		  multipleSelectionsAllowed: true })	
+	
+	// Build a string from the choices
+	var outString = ""
+	for (var c = 0 ; c &lt; choices.length ; c++) {	  
+		outString += choices[c].split(' ')[0] 
+		if (c != choices.length - 1) outString += "\n"
+	}
+	return outString}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -536,7 +546,7 @@ done
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>420.000000:731.000000</string>
+				<string>420.000000:911.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -638,7 +648,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>420.000000:773.000000</string>
+				<string>420.000000:953.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -648,33 +658,33 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>36313F33-3234-427B-B2D0-8161BEDDB872</key>
-		<dict>
-			<key>from</key>
-			<string>EE5019F0-5912-437E-B8C2-B89FD3E07206 - EE5019F0-5912-437E-B8C2-B89FD3E07206</string>
-			<key>to</key>
-			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
-		</dict>
-		<key>3787E9CB-2B2E-4949-8DA5-218826D782DF</key>
-		<dict>
-			<key>from</key>
-			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
-			<key>to</key>
-			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
-		</dict>
-		<key>5EAABB89-AC4E-4CE2-B456-89066EBD5BB8</key>
+		<key>09C8EA22-2B1D-4227-AAC8-360EF0D58F15</key>
 		<dict>
 			<key>from</key>
 			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
 			<key>to</key>
 			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
 		</dict>
-		<key>A604C7C8-630B-4A73-AE87-D26598B43374</key>
+		<key>1E324D2F-931A-470A-B739-D4EB3BB2F9A0</key>
 		<dict>
 			<key>from</key>
 			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
 			<key>to</key>
 			<string>EA4DD364-4B54-4F04-8270-565BA90A2660 - EA4DD364-4B54-4F04-8270-565BA90A2660</string>
+		</dict>
+		<key>2A33F7B6-9766-463F-92D3-49222EFDAD22</key>
+		<dict>
+			<key>from</key>
+			<string>3A8E849E-3224-4E07-920A-C9A95DA91B0A - 3A8E849E-3224-4E07-920A-C9A95DA91B0A</string>
+			<key>to</key>
+			<string>F43C08DB-F7E0-4140-A6B3-ED90371A9B0B - F43C08DB-F7E0-4140-A6B3-ED90371A9B0B</string>
+		</dict>
+		<key>74B9C1B9-DD8E-43D0-AE82-17D929F22626</key>
+		<dict>
+			<key>from</key>
+			<string>EE5019F0-5912-437E-B8C2-B89FD3E07206 - EE5019F0-5912-437E-B8C2-B89FD3E07206</string>
+			<key>to</key>
+			<string>E53C37DE-26C2-4F39-BCEA-765F3FA876D6 - E53C37DE-26C2-4F39-BCEA-765F3FA876D6</string>
 		</dict>
 	</dict>
 	<key>variables</key>
